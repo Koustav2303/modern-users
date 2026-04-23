@@ -2,8 +2,8 @@ import { FaLayerGroup } from 'react-icons/fa';
 
 export default function Sidebar({ users, activeUser, setActiveUser }) {
   return (
-    // Added a stronger background blur specifically for the mobile bottom nav so it stands out against the content
-    <div className="w-full md:w-32 h-24 md:h-full border-t md:border-t-0 md:border-r border-white/5 flex flex-row md:flex-col items-center py-4 md:py-8 px-4 md:px-0 gap-6 md:gap-8 overflow-x-auto md:overflow-y-auto custom-scrollbar-x md:custom-scrollbar-y flex-shrink-0 bg-[#0b0f19]/90 md:bg-transparent backdrop-blur-2xl md:backdrop-blur-none z-20">
+    // Applied sidebar-scrollbar-x for mobile and md:sidebar-scrollbar-y for desktop
+    <div className="w-full md:w-32 h-24 md:h-full border-t md:border-t-0 md:border-r border-white/5 flex flex-row md:flex-col items-center py-4 md:py-8 px-4 md:px-0 gap-6 md:gap-8 overflow-x-auto md:overflow-y-auto sidebar-scrollbar-x md:sidebar-scrollbar-y flex-shrink-0 bg-[#0b0f19]/90 md:bg-transparent backdrop-blur-2xl md:backdrop-blur-none z-20">
       
       {/* ================= Brand / System Logo (Desktop Only) ================= */}
       <div className="hidden md:flex flex-col items-center mb-4 shrink-0">

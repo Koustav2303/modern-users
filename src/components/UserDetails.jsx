@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
-import { FaStar, FaCode } from 'react-icons/fa';
+import { FaStar, FaCode, FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
 
 export default function UserDetails({ activeUser }) {
   const containerRef = useRef(null);
@@ -45,9 +45,34 @@ export default function UserDetails({ activeUser }) {
         {/* Mobile: h-auto to expand. Desktop: h-full and min-h-0 to lock it in. */}
         <div className="flex flex-col w-full h-auto lg:h-full lg:min-h-0 max-w-2xl mx-auto lg:mx-0">
           
-          <div className="gsap-element w-20 h-20 sm:w-28 sm:h-28 rounded-full border border-white/20 p-1 mb-4 sm:mb-6 shadow-2xl relative group bg-white/5 backdrop-blur-md shrink-0">
-            <img src={activeUser.image} alt={activeUser.name} className="w-full h-full rounded-full object-cover" />
-            <div className="absolute inset-0 rounded-full ring-1 ring-inset ring-white/10 group-hover:ring-blue-400/50 transition-all duration-500"></div>
+          {/* ================= PROFILE HEADER (IMAGE + CONNECT + SOCIALS) ================= */}
+          <div className="gsap-element flex flex-row items-center gap-6 sm:gap-8 mb-4 sm:mb-6 shrink-0">
+            
+            {/* Profile Image */}
+            <div className="w-20 h-20 sm:w-28 sm:h-28 rounded-full border border-white/20 p-1 shadow-2xl relative group bg-white/5 backdrop-blur-md shrink-0">
+              <img src={activeUser.image} alt={activeUser.name} className="w-full h-full rounded-full object-cover" />
+              <div className="absolute inset-0 rounded-full ring-1 ring-inset ring-white/10 group-hover:ring-blue-400/50 transition-all duration-500"></div>
+            </div>
+
+            {/* Actions: Button & Social Icons */}
+            <div className="flex flex-col gap-3">
+              <button className="px-5 py-2 sm:px-6 sm:py-2.5 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold text-xs sm:text-sm tracking-wide hover:scale-105 hover:shadow-[0_0_20px_rgba(168,85,247,0.5)] transition-all duration-300 border border-white/10 outline-none w-fit">
+                Connect
+              </button>
+              
+              <div className="flex items-center gap-4 pl-2">
+                <a href="#" className="text-slate-400 hover:text-[#0A66C2] hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(10,102,194,0.8)] transition-all duration-300">
+                  <FaLinkedin className="text-lg sm:text-xl" />
+                </a>
+                <a href="#" className="text-slate-400 hover:text-white hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all duration-300">
+                  <FaGithub className="text-lg sm:text-xl" />
+                </a>
+                <a href="#" className="text-slate-400 hover:text-[#1DA1F2] hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(29,161,242,0.8)] transition-all duration-300">
+                  <FaTwitter className="text-lg sm:text-xl" />
+                </a>
+              </div>
+            </div>
+
           </div>
 
           <h4 className="gsap-element text-blue-400 font-semibold tracking-[0.2em] uppercase text-xs sm:text-sm mb-2 shrink-0">

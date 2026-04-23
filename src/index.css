@@ -80,3 +80,48 @@
   -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
 }
+
+/* ==========================================
+   SIDEBAR NAVIGATION SCROLLBARS
+   ========================================== */
+
+/* Desktop Vertical Sidebar */
+.sidebar-scrollbar-y::-webkit-scrollbar {
+  width: 4px; /* Thinner than the main scrollbar for a sleeker look */
+}
+
+.sidebar-scrollbar-y::-webkit-scrollbar-track {
+  background: transparent;
+  margin-block: 20px; /* Keeps the scrollbar from touching the top/bottom edges */
+}
+
+.sidebar-scrollbar-y::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1); /* Subtle resting state */
+  border-radius: 10px;
+}
+
+.sidebar-scrollbar-y::-webkit-scrollbar-thumb:hover {
+  /* Ignites with the brand gradient when hovered */
+  background: linear-gradient(to bottom, rgba(59, 130, 246, 0.9), rgba(168, 85, 247, 0.9));
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.6);
+}
+
+/* Mobile Horizontal Bottom Nav */
+.sidebar-scrollbar-x::-webkit-scrollbar {
+  height: 4px;
+}
+
+.sidebar-scrollbar-x::-webkit-scrollbar-track {
+  background: transparent;
+  margin-inline: 20px; /* Keeps it off the left/right edges of the screen */
+}
+
+.sidebar-scrollbar-x::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.sidebar-scrollbar-x::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to right, rgba(59, 130, 246, 0.9), rgba(168, 85, 247, 0.9));
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.6);
+}
