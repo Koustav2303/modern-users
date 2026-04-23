@@ -5,10 +5,9 @@
 @layer base {
   body {
     @apply bg-baseDark text-slate-200 overflow-x-hidden;
-    /* Apply the cinematic image with a dark bluish-black overlay for depth */
     background-image: 
       linear-gradient(to bottom right, rgba(11, 15, 25, 0.8), rgba(22, 30, 46, 0.9)),
-      url('https://static.vecteezy.com/system/resources/thumbnails/049/855/471/small/nature-background-high-resolution-wallpaper-for-a-serene-and-stunning-view-free-photo.jpg');
+      url('/bg-cinematic.jpg'); /* Or your web link */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -17,26 +16,67 @@
 }
 
 @layer utilities {
-  /* Utility class for the glass container */
   .glass-panel {
-    @apply bg-glassBg backdrop-blur-lg border border-glassBorder rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.36)];
+    @apply bg-glassBg backdrop-blur-xl border border-glassBorder rounded-3xl shadow-[0_8px_32px_0_rgba(0,0,0,0.5)];
   }
 }
 
-/* Custom Scrollbar specifically for the left icon container */
-.custom-scrollbar::-webkit-scrollbar {
+/* Vertical Scrollbar (Desktop) */
+.custom-scrollbar-y::-webkit-scrollbar {
   width: 4px;
 }
-
-.custom-scrollbar::-webkit-scrollbar-track {
+.custom-scrollbar-y::-webkit-scrollbar-track {
   background: transparent;
 }
+.custom-scrollbar-y::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+.custom-scrollbar-y::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
 
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
+/* Horizontal Scrollbar (Mobile) */
+.custom-scrollbar-x::-webkit-scrollbar {
+  height: 4px;
+}
+.custom-scrollbar-x::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar-x::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
 }
 
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.3);
+/* ==========================================
+   ABOUT TEXT SPECIAL EFFECTS
+   ========================================== */
+
+/* Ultra-sleek, minimal scrollbar for the reading area */
+.about-scrollbar::-webkit-scrollbar {
+  width: 3px; /* Super thin */
+}
+
+.about-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  margin-block: 4px;
+}
+
+.about-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15); /* Very subtle when not in use */
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.about-scrollbar::-webkit-scrollbar-thumb:hover {
+  /* Glows purple to match the theme when hovered */
+  background: rgba(168, 85, 247, 0.8); 
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+}
+
+/* The cinematic fade-out mask at the bottom of the text */
+.text-fade-mask {
+  /* This makes the text 100% visible at the top, and fades to 0% at the very bottom */
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
 }
